@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UCENM Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <!-- Logo UCENM de fondo (marca de agua) -->
+  <div class="logo-watermark">
+    <img src="resources/ucenm.png" alt="" aria-hidden="true" />
+  </div>
+
+  <div class="app-wrapper">
+
+    <!-- Header / Branding -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg width="55" height="55" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <image href="resources/logo-ucenm.png" width="32" height="32" />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#1B3A8C"/>
+                <stop offset="100%" stop-color="#F47920"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">UCENM</span>
+          <span class="brand-sub">Universidad Cristiana Evangélica Nuevo Milenio</span>
+        </div>
+      </div>
+      <div class="header-mode" id="modeToggle" title="Cambiar modo">
+        <span class="mode-icon" id="modeIcon">☀️</span>
+      </div>
+    </header>
+
+    <!-- Calculator Card -->
+    <main class="calculator-card" id="calcCard">
+
+      <!-- History Panel (slides in) -->
+      <div class="history-panel" id="historyPanel">
+        <div class="history-header">
+          <span>Historial</span>
+          <button class="history-clear" id="clearHistory">Limpiar</button>
+        </div>
+        <ul class="history-list" id="historyList">
+          <li class="history-empty">Sin historial aún</li>
+        </ul>
+      </div>
+
+      <!-- Display -->
+      <div class="display-area">
+        <div class="expression-line" id="expressionLine">&nbsp;</div>
+        <div class="result-line" id="resultLine">0</div>
+      </div>
+
+      <!-- Action row -->
+      <div class="action-row">
+        <button class="action-chip" id="historyToggle">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Historial
+        </button>
+        <button class="action-chip" id="copyBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copiar
+        </button>
+      </div>
+
+      <!-- Button Grid -->
+      <div class="btn-grid">
+
+        <!-- Row 1 -->
+        <button class="calc-btn func" data-action="allclear">AC</button>
+        <button class="calc-btn func" data-action="toggleSign">+/−</button>
+        <button class="calc-btn func" data-action="percent">%</button>
+        <button class="calc-btn op" data-action="operator" data-value="÷">÷</button>
+
+        <!-- Row 2 -->
+        <button class="calc-btn num" data-action="number" data-value="7">7</button>
+        <button class="calc-btn num" data-action="number" data-value="8">8</button>
+        <button class="calc-btn num" data-action="number" data-value="9">9</button>
+        <button class="calc-btn op" data-action="operator" data-value="×">×</button>
+
+        <!-- Row 3 -->
+        <button class="calc-btn num" data-action="number" data-value="4">4</button>
+        <button class="calc-btn num" data-action="number" data-value="5">5</button>
+        <button class="calc-btn num" data-action="number" data-value="6">6</button>
+        <button class="calc-btn op" data-action="operator" data-value="−">−</button>
+
+        <!-- Row 4 -->
+        <button class="calc-btn num" data-action="number" data-value="1">1</button>
+        <button class="calc-btn num" data-action="number" data-value="2">2</button>
+        <button class="calc-btn num" data-action="number" data-value="3">3</button>
+        <button class="calc-btn op" data-action="operator" data-value="+">+</button>
+
+        <!-- Row 5 -->
+        <button class="calc-btn num wide" data-action="number" data-value="0">0</button>
+        <button class="calc-btn num" data-action="decimal">.</button>
+        <button class="calc-btn equals" data-action="equals">=</button>
+
+      </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <span>UCENM | Universidad Cristiana Evangélica Nuevo Milenio &copy; 2026</span>
+    </footer>
+
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+</html>
